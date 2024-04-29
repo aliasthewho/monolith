@@ -1,5 +1,6 @@
 package com.example.full_monolith.entity;
 
+import com.example.full_monolith.util.ExcludeFromJacocoGeneratedReport;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,7 @@ public class Book {
     private String author;
 
     @Override
+    @ExcludeFromJacocoGeneratedReport
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Book)) return false;
@@ -30,6 +32,7 @@ public class Book {
     }
 
     @Override
+    @ExcludeFromJacocoGeneratedReport
     public int hashCode() {
         return 31;
     }

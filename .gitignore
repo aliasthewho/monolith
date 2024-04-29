@@ -35,3 +35,15 @@ out/
 
 ### VS Code ###
 .vscode/
+
+.DS_Store
+
+#Jacoco report
+build/jacoco
+
+#jacoco report files
+build/reports/tests
+build/test-results
+
+*.tmp
+*.temp
