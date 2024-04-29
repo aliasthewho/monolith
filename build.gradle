@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
 	id 'jacoco'
+	id 'org.sonarqube' version '4.0.0.2929'
 }
 
 jacoco {
@@ -26,10 +27,14 @@ jacocoTestReport {
 		}))
 	}
 }
-//
-//test {
-//	finalizedBy jacocoTestReport
-//}
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "com.example.full_monolith"
+		property "sonar.host.url", "http://localhost:9000"
+		property "sonar.token", "squ_92902bcc87420d259667b8fc97b4667a963f29d7"
+	}
+}
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -56,7 +61,11 @@ dependencies {
 	testImplementation 'org.mockito:mockito-core'
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
-	finalizedBy('jacocoTestReport')
+	reports {
+		junitXml.required = true
+		junitXml.outputLocation = file("$buildDir/test-results/test")
+		html.required = false
+	}
 }

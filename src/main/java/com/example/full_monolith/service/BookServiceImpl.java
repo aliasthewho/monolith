@@ -41,4 +41,8 @@ public class BookServiceImpl implements BookService {
     public void deleteBookById(Long id) {
         bookRepository.deleteById(id);
     }
+
+    public void doingSomeMagic() {
+        System.out.println("Magic");
+    }
 }
