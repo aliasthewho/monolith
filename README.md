@@ -29,6 +29,38 @@
 4. Jacoco
 5. SonarQube 4.*
 
+## Profiles
+
+As it will be used Postgres and H2, we need to create two profiles on the application.yml file. 
+
+```bash
+./gradlew bootRun --args='--spring.profiles.active=prod'
+```
+```bash
+./gradlew bootRun --args='--spring.profiles.active=dev'
+```
+
+
+```bash
+
+## Database setup
+
+1. PostgreSQL
+
+```bash
+dependencies {
+    runtimeonly 'org.postgresql:postgresql'
+}
+```
+
+2. H2
+
+```bash
+dependencies {
+    runtimeonly 'com.h2database:h2'
+}
+```
+
 ## 2. JACOCO
 
 1. All the required configuration on the build.gradle file.
