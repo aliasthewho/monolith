@@ -1,17 +1,16 @@
 spring:
-#  profiles:
-#    active: @spring.profiles.active@
-#  datasource:
-#    username: root
-#    password: root
   jpa:
-    hibernate:
-      ddl-auto: update
+#    hibernate:
+#      ddl-auto: update
     show-sql: true
 
 ---
 
 spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   config:
     activate:
       on-profile: dev
@@ -24,6 +23,13 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+
+  sql:
+    init:
+      platform: h2
+      mode: always
+#      schema-locations: classpath:/schema.sql
+#      data-locations: classpath:/data.sql
 
 ---
 

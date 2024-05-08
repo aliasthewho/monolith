@@ -20,6 +20,8 @@
 18. Performance optimization
 19. Containerization and Local deployment
 20. CI/CD integration
+BONUS
+21. Testing OWSAP top 10 vulnerabilities
 
 # Pre-requisites
 
